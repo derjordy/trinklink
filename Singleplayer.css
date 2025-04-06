@@ -1,0 +1,458 @@
+.category-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.category-selection h1 {
+  color: #4c1d95;
+  margin: 10px 0 20px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 350px;
+  flex: 1;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(76, 29, 149, 0.1);
+  border: 1px solid rgba(76, 29, 149, 0.1);
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(76, 29, 149, 0.15);
+}
+
+.category-card:active {
+  transform: scale(0.98);
+}
+
+.category-card.selected {
+  background-color: rgba(76, 29, 149, 0.05);
+  box-shadow: 0 6px 12px rgba(76, 29, 149, 0.15);
+  border-color: rgba(76, 29, 149, 0.2);
+}
+
+.category-icon {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  background-color: #4c1d95;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.category-content {
+  flex: 1;
+}
+
+.category-content h3 {
+  color: #4c1d95;
+  margin: 0 0 4px 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.category-content p {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.category-selected-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: pop 0.3s ease;
+}
+
+/* Game Screen Styles */
+.singleplayer-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: fadeIn 0.3s ease;
+}
+
+.singleplayer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(76, 29, 149, 0.1);
+}
+
+.singleplayer-header h1 {
+  color: #4c1d95;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.question-counter {
+  background-color: #4c1d95;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.singleplayer-card {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.singleplayer-question {
+  text-align: center;
+  color: #4c1d95;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  font-weight: 600;
+  max-width: 350px;
+}
+
+.singleplayer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.next-question-button, 
+.skip-question-button {
+  background-color: #4c1d95;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.next-question-button:hover,
+.skip-question-button:hover {
+  background-color: #7e22ce;
+  transform: translateY(-2px);
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 -2px 4px rgba(76, 29, 149, 0.1);
+}
+
+.show-rules-button,
+.change-categories-button, 
+.home-button {
+  background-color: rgba(76, 29, 149, 0.1);
+  color: #4c1d95;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.show-rules-button:hover,
+.change-categories-button:hover, 
+.home-button:hover {
+  background-color: rgba(76, 29, 149, 0.2);
+}
+
+.change-categories-button {
+  background-color: #4c1d95;
+  color: white;
+}
+
+/* Dark Mode Styles for Game Screen */
+.dark-mode .singleplayer-container {
+  background-color: #1c1c1e;
+}
+
+.dark-mode .singleplayer-header {
+  background-color: #2c2c2e;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .singleplayer-header h1 {
+  color: white;
+}
+
+.dark-mode .singleplayer-question {
+  color: white;
+}
+
+.dark-mode .game-controls {
+  background-color: #2c2c2e;
+  box-shadow: 0 -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .show-rules-button,
+.dark-mode .home-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.dark-mode .show-rules-button:hover,
+.dark-mode .home-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 375px) {
+  .singleplayer-question {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+/* Modal Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.return-confirm-modal {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 85%;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideInUp 0.3s ease;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #4c1d95;
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  color: #4b5563;
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-actions button {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+}
+
+.modal-actions button:first-child {
+  background-color: #4c1d95;
+  color: white;
+  border: none;
+}
+
+.modal-actions button.secondary {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #4c1d95;
+  font-weight: 500;
+}
+
+
+
+/* Neue Stile für Spieler-Auswahl */
+.player-selection {
+  text-align: center;
+  padding: 20px;
+}
+
+.player-selection h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.player-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.player-input input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  width: 200px;
+}
+
+.player-input button {
+  padding: 12px 24px; /* Angepasst an .action-button */
+  font-size: 18px; /* Angepasst an .action-button */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #4CAF50; /* Konsistent mit .action-button */
+  color: white;
+  transition: background-color 0.3s; /* Konsistent mit .action-button */
+}
+
+.player-input button:disabled {
+  background: #9ca3af; /* Konsistent mit anderen disabled-Buttons */
+  cursor: not-allowed;
+}
+
+.player-input button:hover:not(:disabled) {
+  background: #45a049; /* Konsistent mit .action-button:hover */
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.player-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-item button {
+  padding: 8px; /* Kleiner für "X"-Button, aber im Stil von .control-button */
+  border-radius: 5px; /* Konsistent mit anderen Buttons */
+  border: none;
+  cursor: pointer;
+  background: #FF5733; /* Auffällige Farbe, aber im Button-Stil */
+  color: white;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  transition: background-color 0.3s; /* Konsistent mit anderen Buttons */
+}
+
+.player-item button:hover {
+  background: #e04e2d; /* Hover-Effekt wie bei anderen Buttons */
+}
+
+.player-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.player-actions .next-button {
+  padding: 12px 24px; /* Konsistent mit .action-button */
+  font-size: 18px; /* Konsistent mit .action-button */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #4CAF50; /* Angepasst an .action-button statt #4c1d95 */
+  color: white;
+  transition: background-color 0.3s; /* Konsistent mit .action-button */
+}
+
+.player-actions .next-button:disabled {
+  background: #9ca3af; /* Konsistent mit anderen disabled-Buttons */
+  cursor: not-allowed;
+}
+
+.player-actions .next-button:hover:not(:disabled) {
+  background: #45a049; /* Konsistent mit .action-button:hover */
+}
+
+
+
+.player-actions .home-button:hover {
+  background: var(--dominant-color, #4c1d95); /* Konsistent mit .home-button:hover */
+  color: white;
+}
